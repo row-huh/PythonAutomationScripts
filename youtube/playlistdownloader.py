@@ -19,6 +19,8 @@ for video in p.videos:
     except:
         print("Error occurred way down bruh")
         
+
+# checks if the user inputted string is a valid playlist string or not        
 def isPlaylistvalid(link):
     regex = r"^(https://)?(www\.)?(youtube\.com|youtu\.be)/playlist\?list=([a-zA-Z0-0]+)"
     match = re.match(regex, link)
