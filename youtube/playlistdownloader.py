@@ -1,7 +1,10 @@
 from pytube import Playlist
 from pytube import exceptions
 
-p = Playlist("https://youtube.com/playlist?list=PLrolabKNtdOIrGLzdwcVVQkm1XgA-dZ4m")
+
+playlist_link = input("Enter playlist link: ")
+
+p = Playlist(playlist_link)
 
 print(f'Downloading: {p.title}')
 
