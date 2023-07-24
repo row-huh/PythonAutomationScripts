@@ -30,3 +30,9 @@ def isPlaylistvalid(link):
         return True
     else:
         return False
+
+
+
+# convert to mp3
+def convertToMp3(video):
+    ...
