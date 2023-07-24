@@ -6,5 +6,9 @@ print(f'Downloading: {p.title}')
 
 
 for video in p.videos:
-    video.bypass_age_gate()
-    video.streams().first().download()
+    try:    
+        video.bypass_age_gate()
+        video.streams().first().download()
+        print("Downloaded Succesfully")
+    except:
+        print(f"something went wrong with {video.title}")
