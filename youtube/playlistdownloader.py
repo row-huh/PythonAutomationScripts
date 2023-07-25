@@ -27,7 +27,7 @@ def getLink():
     
 
 def downloadMP3(link):
-    subprocess.run([r'yt-dlp','--extract-audio', '--audio-format', 'mp3', link])
+    subprocess.run([r'yt-dlp','-x', '--audio-format', 'mp3', link])
     
     
 def downloadMP4(link):
