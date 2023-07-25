@@ -27,11 +27,11 @@ def getLink():
     
 
 def downloadMP3(link):
-    subprocess.run([r'youtube-dl','--extract-audio', '--audio-format', 'mp3', link])
+    subprocess.run([r'yt-dlp','--extract-audio', '--audio-format', 'mp3', link])
     
     
 def downloadMP4(link):
-    subprocess.run([r'youtube-dl', link])
+    subprocess.run([r'yt-dlp', link])
 
 if __name__ == "__main__":
     main()
