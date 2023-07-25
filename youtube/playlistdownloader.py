@@ -10,7 +10,8 @@ def main():
         choice = input("\n\nInvalid choice!!\n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
         
     if choice == "1":
-        ...     # call youtube downloader
+        v = getVideolink()
+        download_video(v)
     elif choice == "2":
         p = getPlaylistlink()
         downloadPlaylist(p)
