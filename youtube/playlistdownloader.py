@@ -1,7 +1,7 @@
 from pytube import Playlist
 from pytube import exceptions
 import re
-
+from moviepy.editor import AudioFileClip
 
 def main():
     playlist_link = input("Enter playlist link: ")
@@ -23,16 +23,20 @@ def main():
         
 
 # checks if the user inputted string is a valid playlist string or not        
-def isPlaylistvalid(link):
+def getPlaylist():
+    link = input("Enter Playlist link: ")
     regex = r"^(https://)?(www\.)?(youtube\.com|youtu\.be)/playlist\?list=([a-zA-Z0-0]+)"
     match = re.match(regex, link)
-    if match:
-        return True
-    else:
-        return False
+    while not match:
+        link = input("Invalid link, Enter again: ")
+        match = re.match(regex, link)
+
 
 
 
 # convert to mp3
 def convertToMp3(video):
     ...
+    
+if __name__ == "__main__":
+    main()
