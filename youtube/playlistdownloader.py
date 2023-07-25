@@ -14,12 +14,9 @@ def main():
         choice = input("\n\nInvalid choice!!\n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
         
     if choice == "1":
-        v = getVideolink()
-        download_video(v)
+        ...
     elif choice == "2":
-        p = getPlaylistlink()
-        downloadPlaylist(p)
-        
+        ...        
 
 
 
@@ -35,11 +32,6 @@ def getPlaylistlink():
 
 
 
-def download_video(videolink):
-    subprocess.run(['youtube-dl', videolink])
-
-
-
 def getVideolink():
     link = input("Enter Video link: ")
     regex = r"^(https?://)?(www\.)?(youtube\.com|youtu\.be)/(watch\?v=)?([a-zA-Z0-9_-]+)"
@@ -50,11 +42,6 @@ def getVideolink():
     return link
     
     
-# convert to mp3
-def convertToMp3(video):
-    ...
-    
-
     
 if __name__ == "__main__":
     main()
