@@ -1,7 +1,4 @@
-from pytube import Playlist, YouTube
-from pytube import exceptions
 import re
-from moviepy.editor import AudioFileClip
 import subprocess
 
 
