@@ -8,11 +8,13 @@ def main():
     # ask the user if they want to download video or a playlist
     choice = input("Enter the number adjacent to: \n[1] MP3\n[2] MP4\nEnter: ")
     while choice != "1" and choice != "2":
-        choice = input("\n\nInvalid choice!!\n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
+        choice = input("Enter the number adjacent to: \n[1] MP3\n[2] MP4\nEnter: ")
+    
+    link = getLink()
     if choice == "1":
-        ...
+        downloadMP3(link)
     elif choice == "2":
-        ...        
+        downloadMP4(link)        
  
 
 # checks if the user inputted string is a valid playlist string or not        
