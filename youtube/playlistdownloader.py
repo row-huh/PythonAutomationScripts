@@ -37,9 +37,6 @@ def getPlaylistlink():
 
 
 def downloadPlaylist(playlistlink):
-    p = Playlist(playlistlink)
-    
-    for video in p.videos:
         download_video(video.watch_url)
         
 
@@ -47,12 +44,7 @@ def downloadPlaylist(playlistlink):
     
 
 def download_video(videolink):
-    video = YouTube (
-        videolink,
-        use_oauth=True,
-        allow_oauth_cache=True
-    )
-    video.streams.first().download("C:/Users/rohaa/Downloads")
+    subprocess.run(['youtube-dl', videolink])
 
 
 
