@@ -35,14 +35,6 @@ def getPlaylistlink():
 
 
 
-
-def downloadPlaylist(playlistlink):
-        download_video(video.watch_url)
-        
-
-
-    
-
 def download_video(videolink):
     subprocess.run(['youtube-dl', videolink])
 
