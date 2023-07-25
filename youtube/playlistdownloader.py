@@ -17,6 +17,7 @@ def main():
  
 
 
+
 # checks if the user inputted string is a valid playlist string or not        
 def getPlaylistlink():
     link = input("Enter Playlist link: ")
@@ -39,6 +40,12 @@ def getVideolink():
     return link
     
     
+
+def downloadMP3():
+    ...
     
+def downloadMP4():
+    ...
+
 if __name__ == "__main__":
     main()
