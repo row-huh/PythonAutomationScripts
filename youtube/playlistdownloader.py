@@ -1,7 +1,4 @@
-from pytube import Playlist, YouTube
-from pytube import exceptions
 import re
-from moviepy.editor import AudioFileClip
 import subprocess
 
 
@@ -14,12 +11,9 @@ def main():
         choice = input("\n\nInvalid choice!!\n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
         
     if choice == "1":
-        v = getVideolink()
-        download_video(v)
+        ...
     elif choice == "2":
-        p = getPlaylistlink()
-        downloadPlaylist(p)
-        
+        ...        
 
 
 
@@ -35,27 +29,6 @@ def getPlaylistlink():
 
 
 
-
-def downloadPlaylist(playlistlink):
-    p = Playlist(playlistlink)
-    
-    for video in p.videos:
-        download_video(video.watch_url)
-        
-
-
-    
-
-def download_video(videolink):
-    video = YouTube (
-        videolink,
-        use_oauth=True,
-        allow_oauth_cache=True
-    )
-    video.streams.first().download("C:/Users/rohaa/Downloads")
-
-
-
 def getVideolink():
     link = input("Enter Video link: ")
     regex = r"^(https?://)?(www\.)?(youtube\.com|youtu\.be)/(watch\?v=)?([a-zA-Z0-9_-]+)"
@@ -66,11 +39,6 @@ def getVideolink():
     return link
     
     
-# convert to mp3
-def convertToMp3(video):
-    ...
-    
-
     
 if __name__ == "__main__":
     main()
