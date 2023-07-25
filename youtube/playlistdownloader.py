@@ -3,6 +3,8 @@ from pytube import exceptions
 import re
 from moviepy.editor import AudioFileClip
 
+
+# main function
 def main():
     # ask the user if they want to download video or a playlist
     choice = input("Enter the number adjacent to: \n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
