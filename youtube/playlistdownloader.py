@@ -1,4 +1,4 @@
-from pytube import Playlist
+from pytube import Playlist, YouTube
 from pytube import exceptions
 import re
 from moviepy.editor import AudioFileClip
@@ -12,7 +12,8 @@ def main():
     if choice == "1":
         ...     # call youtube downloader
     elif choice == "2":
-        ...     # call playlist downloader
+        p = getPlaylistlink()
+        downloadPlaylist(p)
         
 
 # checks if the user inputted string is a valid playlist string or not        
@@ -26,15 +27,21 @@ def getPlaylistlink():
     return link
 
 
-def download_video(video):
-    try:
-        video.bypass_age_gate()
-        video.streams.first().download('C:/Users/rohaa/Downloads')
-        print("Downloaded Succesfully")
-    except exceptions.AgeRestrictedError:
-        print(f"Age restricted error on {video.title}, moving on")
-    except:
-        print(f"Some error occurred on {video.title}, moving on")
+def downloadPlaylist(playlistlink):
+    p = Playlist(playlistlink)
+    
+    for video in p.videos:
+        download_video(video.watch_url)
+        
+    
+
+def download_video(videolink):
+    video = YouTube (
+        videolink,
+        use_oauth=False,
+        allow_oauth_cache=True
+    )
+    video.streams.first().download("C:/Users/rohaa/Downloads")
 
 
 
