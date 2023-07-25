@@ -41,11 +41,12 @@ def getVideolink():
     
     
 
-def downloadMP3():
-    ...
+def downloadMP3(link):
+    subprocess.run(['youtube-dl', '--extract-audio', '--audio-format', 'mp3', link])
     
-def downloadMP4():
-    ...
+    
+def downloadMP4(link):
+    subprocess.run(['youtube-dl', link])
 
 if __name__ == "__main__":
     main()
