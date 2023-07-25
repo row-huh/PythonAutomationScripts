@@ -4,15 +4,18 @@ import re
 from moviepy.editor import AudioFileClip
 
 def main():
+    # ask the user if they want to download video or a playlist
+    
+    # if they say video then ask them for a video link
+        # call a download video function
+        
+    
+    # if they say playlist, ask them for a playlist link
+        # call a download playlist function
+    # 
     playlist_link = getPlaylistlink()
     p = Playlist(playlist_link)
 
-
-    print(f'********* Downloading: {p.title} ***********')
-
-
-    for video in p.videos:
-        ...
         
 
 # checks if the user inputted string is a valid playlist string or not        
@@ -28,13 +31,13 @@ def getPlaylistlink():
 
 def download_video(video):
     try:
-            video.bypass_age_gate()
-            video.streams.first().download('C:/Users/rohaa/Downloads')
-            print("Downloaded Succesfully")
+        video.bypass_age_gate()
+        video.streams.first().download('C:/Users/rohaa/Downloads')
+        print("Downloaded Succesfully")
     except exceptions.AgeRestrictedError:
         print(f"Age restricted error on {video.title}, moving on")
     except:
-        print("Error occurred way down bruh")
+        print(f"Some error occurred on {video.title}, moving on")
 
 
 
@@ -43,9 +46,7 @@ def download_video(video):
 def convertToMp3(video):
     ...
     
-    
-    
-    
+
     
 if __name__ == "__main__":
     main()
