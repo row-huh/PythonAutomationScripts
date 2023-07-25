@@ -2,6 +2,8 @@ from pytube import Playlist, YouTube
 from pytube import exceptions
 import re
 from moviepy.editor import AudioFileClip
+import subprocess
+
 
 def main():
     # ask the user if they want to download video or a playlist
@@ -17,6 +19,8 @@ def main():
         downloadPlaylist(p)
         
 
+
+
 # checks if the user inputted string is a valid playlist string or not        
 def getPlaylistlink():
     link = input("Enter Playlist link: ")
@@ -28,25 +32,38 @@ def getPlaylistlink():
     return link
 
 
+
+
 def downloadPlaylist(playlistlink):
     p = Playlist(playlistlink)
     
     for video in p.videos:
         download_video(video.watch_url)
         
+
+
     
 
 def download_video(videolink):
     video = YouTube (
         videolink,
-        use_oauth=False,
+        use_oauth=True,
         allow_oauth_cache=True
     )
     video.streams.first().download("C:/Users/rohaa/Downloads")
 
 
 
-
+def getVideolink():
+    link = input("Enter Video link: ")
+    regex = r"^(https?://)?(www\.)?(youtube\.com|youtu\.be)/(watch\?v=)?([a-zA-Z0-9_-]+)"
+    match = re.match(regex, link)
+    while not match:
+        link = input("Invalid link, Enter again: ")
+        match = re.match(regex, link)
+    return link
+    
+    
 # convert to mp3
 def convertToMp3(video):
     ...
