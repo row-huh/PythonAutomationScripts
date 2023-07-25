@@ -5,17 +5,14 @@ from moviepy.editor import AudioFileClip
 
 def main():
     # ask the user if they want to download video or a playlist
-    
-    # if they say video then ask them for a video link
-        # call a download video function
+    choice = input("Enter the number adjacent to: \n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
+    while choice != "1" and choice != "2":
+        choice = input("\n\nInvalid choice!!\n[1] Download a YouTube video\n[2] Download a YouTube playlist\nEnter: ")
         
-    
-    # if they say playlist, ask them for a playlist link
-        # call a download playlist function
-    # 
-    playlist_link = getPlaylistlink()
-    p = Playlist(playlist_link)
-
+    if choice == "1":
+        ...     # call youtube downloader
+    elif choice == "2":
+        ...     # call playlist downloader
         
 
 # checks if the user inputted string is a valid playlist string or not        
